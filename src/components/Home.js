@@ -1,19 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion ";
 const Home = () => {
   return (
     <div className="home container">
-      <h2>
-        Welcome to Pizza Joint
-      </h2>
-      <Link to="/base">
-        <button>
-          Create Your Pizza
-        </button>
-      </Link>
-    </div>
-  )
-}
-
-export default Home;
+      {/* here motion is added to the component and in animate function we add the property animate to it and pass the props which we want to animate  */}
+      <motion.h2 animate
