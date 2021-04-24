@@ -10,7 +10,7 @@ const Base = ({ addBase, pizza }) => {
       className="base container"
       initial={{ y: "100vw" }}
       animate={{ y: 0 }}
-      transition={{ type: "spring", delay: 0.5, stiffness: 50 }}
+      transition={{ type: "spring", delay: 0.1, stiffness: 50 }}
     >
       <h3> Step 1: Choose Your Base </h3>{" "}
       <ul>
@@ -19,12 +19,17 @@ const Base = ({ addBase, pizza }) => {
           //used the map funciotn to traverse through bases array
           let spanClass = pizza.base === base ? "active" : "";
           return (
-            <li key={base} onClick={() => addBase(base)}>
+            <motion.li
+              key={base}
+              onClick={() => addBase(base)}
+              whileHover={{ scale: 1.3, originX: 0, color: "#e8ff0c" }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <span className={spanClass}> {base} </span>{" "}
-            </li>
+            </motion.li>
           );
-        })}{" "}
-      </ul>{" "}
+        })}
+      </ul>
       {pizza.base && (
         <motion.div
           className="next"

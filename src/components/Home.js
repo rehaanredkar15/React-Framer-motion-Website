@@ -15,10 +15,19 @@ const Home = () => {
         transition={{ delay: 0.2, duration: 1.2 }}
       >
         {" "}
-        Welcome to RCB pizzas{" "}
+        Welcome to RCB pizzas
       </motion.h2>{" "}
       <Link to="/base">
-        <motion.button animate={{ scale: 1 }}>Create Your Pizza </motion.button>{" "}
+        <motion.button
+          whileHover={{
+            scale: 1.1,
+
+            textShadow: "0px 0px 8px rgb(255,255,255)",
+            boxShadow: "0px 0px 8px rgb(255,255,255)",
+          }}
+        >
+          Create Your Pizza{" "}
+        </motion.button>{" "}
       </Link>{" "}
     </motion.div>
   );
