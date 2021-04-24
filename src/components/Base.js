@@ -44,16 +44,25 @@ const Base = ({ addBase, pizza }) => {
         })}
       </ul>
       {pizza.base && (
-        <motion.div
-          className="next"
-          initial={{ x: "-100vw" }}
-          animate={{ x: 0 }}
-          transition={{ type: "spring", stiffness: 100 }}
-        >
-          <Link to="/toppings">
-            <button> Next </button>{" "}
-          </Link>{" "}
-        </motion.div>
+        <Link to="/toppings">
+          <motion.div>
+            <motion.button
+              className="next"
+              initial={{ x: "100vw" }}
+              animate={{ x: 0 }}
+              transition={{ type: "spring", stiffness: 100 }}
+              whileHover={{
+                scale: 1.1,
+
+                textShadow: "0px 0px 8px rgb(255,255,255)",
+                boxShadow: "0px 0px 8px rgb(255,255,255)",
+              }}
+            >
+              {" "}
+              Next{" "}
+            </motion.button>{" "}
+          </motion.div>
+        </Link>
       )}{" "}
     </motion.div>
   );
