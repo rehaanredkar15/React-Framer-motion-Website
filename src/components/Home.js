@@ -13,13 +13,29 @@ const buttonVariants = {
     },
   },
 };
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 1.5, duration: 1.5 },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
+
 const Home = () => {
   return (
     <motion.div
       className="home container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1, duration: 1.5 }}
+      variants={containerVariants}
+      inital="hidden"
+      animate="visible"
+      exit="exit"
     >
       {/* here motion is added to the component and in animate function we add the property animate to it and pass the props which we want to animate  */}{" "}
       <motion.h2
