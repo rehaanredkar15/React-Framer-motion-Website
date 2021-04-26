@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 const containerVariants = {
@@ -31,7 +31,14 @@ const childVariants = {
   },
 };
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza, setShowModal }) => {
+  //here we will use useeffect hook , we can use set time out also but it will repeat always
+  //when the component is changed but we want to show the modal when just value changes for that we have use effect hook to
+  useEffect(() => {
+    setTimeout(() => {
+      setShowModal(true);
+    }, 2000);
+  }, [setShowModal]);
   return (
     <motion.div
       className="container order"
