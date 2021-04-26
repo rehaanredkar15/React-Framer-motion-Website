@@ -32,9 +32,12 @@ function App() {
   return (
     <>
       <Header />
-      <Modal ShowModal={ShowModal} setShowModal={setShowModal} />
-      <AnimatePresence>
-        <Switch>
+      <Modal ShowModal={ShowModal} />
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => setShowModal(false)}
+      >
+        <Switch location={location} key={location.key}>
           <Route path="/base">
             <Base addBase={addBase} pizza={pizza} />{" "}
           </Route>{" "}
